@@ -80,7 +80,17 @@ export default function App() {
   function renderPage() {
     switch (page) {
       case "dashboard":
-        return <Dashboard />;
+  return (
+    <Dashboard
+      customers={customers}
+      policies={policies}
+      payments={payments}
+      onAddCustomer={() => setCustomerModal(true)}
+      onCustomer={openCustomer}
+      onPolicy={openPolicy}
+      onNavigate={navigate}
+    />
+  );
 
       case "customers":
         return (
